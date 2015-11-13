@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Taller-Android-BD</string>
+    <string name="start">Iniciar</string>
+    <string name="add">Añadir</string>
+    <string name="new_item">Nuevo Item</string>
+    <string name="item_detail">Detalles</string>
+    <string name="exit">Salir</string>
+    <string name="test">Test</string>
+    <string name="void_string"></string>
+    <string name="error_connection">No hay conexión de red</string>
+    <string name="ERROR">Error</string>
+    <string name="ok">Ok</string>
+    <string name="no_server">No se puede alcanzar el servidor</string>
+    <string name="error_no_server">no_server</string>
+    <string name="success_post">Datos enviados exitosamente</string>
+    <string name="no_text">Ingresa datos validos</string>
+    <string name="url_server">http://192.168.137.150:8080/sakila-backend1860114378085685832/</string>
+</resources>
