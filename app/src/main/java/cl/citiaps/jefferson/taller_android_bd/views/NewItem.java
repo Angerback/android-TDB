@@ -33,7 +33,7 @@ public class NewItem extends Fragment implements View.OnClickListener {
     EditText etNombreActor;
     EditText etApellidoActor;
     Button btnPost;
-    private final String URL_POST = "http://192.168.43.35:8080/taller-bd-11/actors";
+    private final String URL_POST = "http://192.168.43.35:8080/sakila-backend1860114378085685832/actors";
     private BroadcastReceiver br = null;
 
     /**

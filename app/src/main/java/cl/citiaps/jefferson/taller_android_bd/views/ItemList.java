@@ -29,7 +29,7 @@ import cl.citiaps.jefferson.taller_android_bd.utilities.SystemUtilities;
 public class ItemList extends ListFragment {
 
     private BroadcastReceiver br = null;
-    private final String URL_GET = "http://192.168.43.35:8080/taller-bd-11/actors";
+    private final String URL_GET = "http://192.168.43.111:8080/sakila-backend1860114378085685832/actors";
     private ArrayList<String[]> actorsDetail = new ArrayList<>();
     /**
      * Constructor. Obligatorio para Fragmentos!

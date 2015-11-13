@@ -15,4 +15,9 @@
     <string name="success_post">Datos enviados exitosamente</string>
     <string name="no_text">Ingresa datos validos</string>
     <string name="url_server">http://192.168.137.150:8080/sakila-backend1860114378085685832/</string>
+    <string name="lastUpdate">Last Update</string>
+    <string name="Actor">Actor</string>
+    <string name="firstName">FirstName</string>
+    <string name="lastName">LastName</string>
+    <string name="Id">Id</string>
 </resources>
