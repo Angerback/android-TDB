@@ -28,11 +28,19 @@ import cl.citiaps.jefferson.taller_android_bd.R;
 public class HttpPost extends AsyncTask<String, Void, String>{
     private Context context;
 
+    public interface AsyncResponse {
+        void processFinish(String output);
+    }
+    //El delegado escucha el evento
+    public AsyncResponse delegate = null;
+
     /**
      * Constructor
      */
-    public HttpPost(Context context) {
+    public HttpPost(Context context, AsyncResponse delegate) {
         this.context = context;
+        //Pasas el delegado que va a escuchar. Se crea desde fuera.
+        this.delegate = delegate;
     }
 
     @Override
@@ -71,7 +79,7 @@ public class HttpPost extends AsyncTask<String, Void, String>{
                 response.append('\r');
             }
             rd.close();
-            return response.toString();
+            return "SUCCESS";
 
 
         } catch (Exception e) {
@@ -89,12 +97,16 @@ public class HttpPost extends AsyncTask<String, Void, String>{
         if (result == "NO_SERVER") {
             Toast toast = Toast.makeText(this.context, R.string.no_server,  Toast.LENGTH_LONG);
             toast.show();
-        }else{
+        }else if(result=="SUCCESS"){
             /*Intent intent = new Intent("httpPost").putExtra("data", result);
             context.sendBroadcast(intent);*/
             Toast toast = Toast.makeText(this.context, R.string.success_post,  Toast.LENGTH_LONG);
             toast.show();
+
+
         }
+        //Se informa del resultado al metodo del delegado.
+        delegate.processFinish(result);
     }
 
 }// HttpPost

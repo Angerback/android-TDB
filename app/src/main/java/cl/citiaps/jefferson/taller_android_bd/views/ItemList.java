@@ -94,7 +94,7 @@ public class ItemList extends ListFragment {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             builder.setMessage(R.string.error_connection)
                     .setTitle(R.string.ERROR)
-                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener(){
+                    .setPositiveButton(R.string.exit_app, new DialogInterface.OnClickListener(){
                         public void onClick(DialogInterface dialog, int id) {
                             getActivity().finish();
                             Intent intent = new Intent(Intent.ACTION_MAIN);

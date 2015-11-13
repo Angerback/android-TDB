@@ -1,5 +1,6 @@
 package cl.citiaps.jefferson.taller_android_bd.views;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.BroadcastReceiver;
 import android.os.Bundle;
@@ -7,6 +8,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -81,8 +84,23 @@ public class NewItem extends Fragment implements View.OnClickListener {
                     Toast.makeText(getActivity().getBaseContext(), R.string.no_text, Toast.LENGTH_LONG).show();
                 else{
                 // call AsynTask to perform network operation on separate thread
-                new HttpPost(getActivity().getApplicationContext()).execute(URL_POST, etNombreActor.getText().toString(), etApellidoActor.getText().toString());
+                new HttpPost(getActivity().getApplicationContext(), new HttpPost.AsyncResponse(){
+                    // Al hacer override se implementa el comportamiento para este listener.
+                    @Override
+                    public void processFinish(String output){
+                        //Here you will receive the result fired from async class
+                        //of onPostExecute(result) method.
+                        if(output == "SUCCESS"){
+                            getActivity().getFragmentManager().popBackStack();
+                            //getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+                            ((InputMethodManager) getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE))
+                                    .toggleSoftInput(InputMethodManager.SHOW_IMPLICIT, 0);
+                        }
+                    }
+                }).execute(URL_POST, etNombreActor.getText().toString(), etApellidoActor.getText().toString());
                 }
+                // Retorno desde HTTPPOST
+
                 break;
         }
 

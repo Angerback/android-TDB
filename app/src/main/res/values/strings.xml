@@ -9,7 +9,7 @@
     <string name="void_string"></string>
     <string name="error_connection">No hay conexión de red</string>
     <string name="ERROR">Error</string>
-    <string name="ok">Ok</string>
+    <string name="exit_app">Salir</string>
     <string name="no_server">No se puede alcanzar el servidor</string>
     <string name="error_no_server">no_server</string>
     <string name="success_post">Datos enviados exitosamente</string>
